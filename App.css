@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #faf8ff;
+}
+
+.header {
+  text-align: center;
+  color: #5b21b6;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.header h2 {
+  font-size: 24px;
+}
+
+.header p {
+  font-size: 16px;
+  color: #5b21b6;
+}
+
+.appointment-section {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.calendar-container,
+.chatbot-container {
+  background-color: #d6cbf3;
+  border-radius: 40px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.calendar-container h3 {
+  text-align: center;
+  color: #5b21b6;
+  margin-bottom: 20px;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+}
+
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-messages {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.chat-message {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 70%;
+  font-size: 14px;
+}
+
+.chat-message.bot {
+  background-color: #f0f0f0;
+  align-self: flex-start;
+  border-top-left-radius: 0;
+  margin-left: 10px;
+}
+
+.chat-message.user {
+  background-color: #6c3a7c;
+  color: white;
+  align-self: flex-end;
+  border-top-right-radius: 0;
+  margin-right: 10px;
+}
+
+.chat-icon {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #5b21b6;
+  margin-right: 10px;
+  color: #666;
+}
+
+.send-button {
+  background-color: #6c3a7c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.time-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.time-button {
+  background-color: #6c3a7c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.time-button:hover {
+  background-color: #5b21b6;
+}
+
+.chat-input input[disabled] {
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+}
+
+.timer {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  background-color: #6c3a7c;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.modal {
+  background: linear-gradient(135deg, #a16dd2, #6e3aa4);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  color: #fff;
+}
+
+.titleCons {
+  margin-bottom: 20px;
+}
+
+.link-cons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.cancel {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.psico {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.loading-image {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.buttons button {
+  background-color: #c6b2e0;
+  border: none;
+  border-radius: 40px;
+  padding: 10px;
+  color: #4a1d73;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100px;
+}
+
+.buttons button:hover {
+  background-color: #a16dd2;
+}
+
+.styled-calendar {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.styled-calendar .react-calendar__tile {
+  background-color: #f3e8ff;
+  color: #4a1d73;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.styled-calendar .react-calendar__tile:hover {
+  background-color: #d9b3ff;
+}
+
+.styled-calendar .react-calendar__tile--active {
+  background-color: #a16dd2;
+  color: white;
+}
+
+.styled-calendar .react-calendar__month-view__days__day--neighboringMonth {
+  color: #d3d3d3;
+}
+
+.styled-calendar .react-calendar__month-view__days__day--weekend {
+  color: #d3d3d3;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .appointment-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .calendar-container,
+  .chatbot-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .modal {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .buttons button {
+    width: 80px;
+    padding: 8px;
+  }
+
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+}
